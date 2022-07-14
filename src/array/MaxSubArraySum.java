@@ -39,29 +39,27 @@ public class MaxSubArraySum {
 
     static long maxSubArraySumWithoutHashMap(int arr [] , int n ){
 
-       long newArr[] = new long [n];
+      // long newArr[] = new long [n];
        long sum =0;
-
        long max =Integer.MIN_VALUE;
        for (int i =0; i<n ; i++){
            sum = sum +arr[i];
-           newArr[i]=sum ;
+          // newArr[i]=sum ;
+           if(max <sum )
+              max =sum ;
+           if(sum <0)
+               sum =0;
+
 
        }
 
-        for (int i =0; i<n ; i++){
 
-           if(max < newArr[i]){
-               max =newArr[i];
-           }
-
-        }
 return max;
     }
    public static void main (String args []){
 
- int arr  [] ={-1 ,-2, -3, -4  };
- int n =4;
+ int arr  [] ={-1 ,-2, -3, -4  ,44};
+ int n =5;
 
       //System.out.println( maxSubArraySum(arr,n));
        System.out.println(  maxSubArraySumWithoutHashMap(arr,n));
