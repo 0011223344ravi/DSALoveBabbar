@@ -32,7 +32,7 @@ public class FindRowWithMaxNoOFOne {
         if(cmax == 0)
             return -1;
         return row;
-    
+
 }
     public static void main (String args []){
         int N = 4 ;int M = 4;
