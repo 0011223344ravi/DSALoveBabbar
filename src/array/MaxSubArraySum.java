@@ -40,6 +40,7 @@ public class MaxSubArraySum {
     static long maxSubArraySumWithoutHashMap(int arr [] , int n ){
 
       // long newArr[] = new long [n];
+        //4 2 -3 1 6
        long sum =0;
        long max =Integer.MIN_VALUE;
        for (int i =0; i<n ; i++){

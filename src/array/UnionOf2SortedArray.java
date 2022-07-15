@@ -33,7 +33,7 @@ public class UnionOf2SortedArray {
 
            al.add(arr2[i]);
         }
-   System.out.println(al);
+   //System.out.println(al);
          Set<Integer> ts = new TreeSet<Integer>(al);
         System.out.println( ts.size());
 
