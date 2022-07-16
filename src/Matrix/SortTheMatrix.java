@@ -1,19 +1,42 @@
 package Matrix;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class SortTheMatrix {
-    public static  void Sort2DArrayBasedOnColumnNumber (int[][] array, final int columnNumber){
-        Arrays.sort(array, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] first, int[] second) {
-                if(first[columnNumber-1] > second[columnNumber-1]) return 1;
-                else return -1;
-            }
-        });
-    }
 
+    static int[][] sortedMatrix(int N, int Mat[][]) {
+       {
+            // code here
+            int a[]=new int[N*N];
+            int i=0,k=0;
+            int j=0;
+            while(i<N && j< N){
+                a[k++]=Mat[i][j];
+                j++;
+                if(j==N){
+                    i=i+1;
+                    j=0;
+                }
+            }
+            Arrays.sort(a);
+            k=0;
+            i=0;
+            j=0;
+            while(i<N && j< N){
+                Mat[i][j]=a[k++];
+                j++;
+                if(j==N){
+                    i=i+1;
+                    j=0;
+                }
+            }
+            return Mat;
+        }
+    }
 
     public static  void main (String args []){
 
@@ -25,24 +48,7 @@ public class SortTheMatrix {
                 {27, 29, 37, 48},
                 {32, 33, 39, 50}};
 
-        Sort2DArrayBasedOnColumnNumber(Arr,N);
-        for (int i =0; i<N; i++ ){
-            for (int j =0; j<M; j++)
-            {
-            Arr1[i][j]=Arr[i][j];
-
-            }
-
-        }
-
-        for (int i =0; i<N; i++ ){
-            for (int j =0; j<M; j++)
-            {
-                System.out.print(Arr1[i][j] +" ");
-
-            }
-           System.out.println();
-        }
+      System.out.println(sortedMatrix(N,Arr));
 
     }
 }
